@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  body {
+    background-color: #2C173C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    width: 100%;
+    background-color: #220B34;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: #c3a0ff;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff73f3;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff73f3;
+    position: left;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .home-icon {
+    color: #ff73f3;
+    text-decoration: none;
+  }
+  
+  .search {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    color: #3d1a5e;
+  }
+  
+  .profile-icon {
+    font-size: 20px;
+  }
+  
+  main {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .logo img {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .grupo-box {
+    background-color: #3d1a5e;
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  .grupo-box strong {
+    color: #b082ff;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .search-bar input {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    background-color: #3a2560;
+    color: rgb(138, 1, 142);
+  }
+  
+  .search-bar button {
+    background-color: #6b1ad1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

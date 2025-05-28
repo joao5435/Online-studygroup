@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #26003c;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-container {
+    width: 300px;
+    background-color: #2f004d;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.voltar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgb(47, 0, 121);
+    margin-top: 30px;
+}
+
+h2 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+}
+
+.estatisticas {
+    background-color: #3b0a61;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.estatisticas div {
+    flex: 1;
+    text-align: center;
+    color: #cccccc;
+}
+
+.estatisticas span {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.icone-patente {
+    width: 25px;
+    margin-bottom: 5px;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.acoes div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border-radius: 8px;
+    color: #9e82ff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.acoes div:hover {
+    background-color: #472167;
+}
+
+.acoes img {
+    width: 20px;
+}
