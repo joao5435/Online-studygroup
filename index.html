@@ -4,20 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Online Study Group</title>
-  <link rel="stylesheet" href="./src/assets/style/style.css" />
+  <link rel="stylesheet" href="./src/assets/style/home.css" />
 </head>
 <body>
   <header>
-    <div class="menu-icon">
-       <a href="Seção_1.html">☰</a>
-    </div>
+    <a href="Seção_1.html">
+      <div class="menu-icon">
+        <img src="./src/assets/img/icon da home parte esquerda superior.png" alt="Três Listras">
+      </div>
+    </a>
     
     <div class="logo">Online study group</div>
     <div class="search-container">
       <input type="text" placeholder="Pesquisar" />
       <div class="search-icon">🔍</div>
     </div>
-    <div class="user-icon"><a href="Perfil.html">👤</a></div>
+    <div class="user-icon">
+      <a href="Perfil.html">
+        <img src="./src/assets/img/usuario-de-perfil.png" alt="Perfil do Usuário" style="width: 24px; height: 24px;">
+      </a>
+    </div>
   </header>
 
   <section class="banner">
@@ -34,7 +40,12 @@
   <section class="grupos">
     <h2>Seus Grupos</h2>
     <ul>
-      <li><span>🧪</span> Grupo de Química</li>
+      <li>
+        <a href="GrupoQuimica.html">
+          <span>🧪</span> Grupo de Química
+        </a>
+      </li>
+      
       <li><span>🗣️</span> Grupo de Português</li>
       <li><span>📐</span> Grupo de Matemática</li>
       <li><span>🌍</span> Grupo de Geografia</li>
