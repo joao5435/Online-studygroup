@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #2d1039;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    background-color: #5d2c8a;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 700px;
+    height: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .left-panel {
+    width: 40%;
+    background-color: #4b2472;
+    padding: 30px 20px;
+  }
+  
+  .friends-list {
+    list-style: none;
+  }
+  
+  .friends-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .friends-list img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border: 2px solid #fff;
+  }
+  
+  .right-panel {
+    width: 60%;
+    background-color: #6a38a0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .invite-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px #000;
+  }
+  
+  .swords {
+    width: 100px;
+    height: auto;
+  }
+  .voltar {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #2a003f;
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: #ff00cc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 0 10px #ff00cc55;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .voltar:hover {
+    background-color: #3a005a;
+    color: #ffffff;
+    text-shadow: 0 0 8px #ff00cc;
+  }
+  
+  .icon-back {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  

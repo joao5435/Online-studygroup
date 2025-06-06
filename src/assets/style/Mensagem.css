@@ -1,0 +1,101 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2a153c; /* fundo roxo escuro */
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container geral */
+  .container {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    height: 90vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #3b1f57; /* tom secundário roxo */
+    box-shadow: 0 0 20px #00000060;
+  }
+  
+  /* Sidebar de amigos */
+  .sidebar {
+    width: 30%;
+    background-color: #4e2a6e; /* tom roxo mais vibrante */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 2px solid #6d2ebd;
+  }
+
+  
+  .friend-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .friend-list li {
+    display: flex;
+    align-items: center;
+    background-color: #6d2ebd40;
+    padding: 10px;
+    border-radius: 12px;
+    transition: background 0.3s;
+  }
+  
+  .friend-list li:hover {
+    background-color: #6d2ebd70;
+  }
+  
+  .friend-list img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #8245d4;
+  }
+  
+  .friend-list span {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  /* Área principal do chat */
+  .chat-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f1945;
+    position: relative;
+  }
+  
+  .empty-chat {
+    text-align: center;
+    opacity: 0.7;
+  }
+  
+  .empty-chat img {
+    width: 100px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 6px #8245d4);
+  }
+  
+  .empty-chat p {
+    font-size: 18px;
+    color: #ccc;
+  }
+  

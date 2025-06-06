@@ -1,34 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exatas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duelo de Saberes</title>
   <link rel="stylesheet" href="./src/assets/style/DueloReal.css">
 </head>
-<body class="duelo-real">
-  <header>
-    <h1>Online study group</h1>
-  </header>
-  <main class="duel-container">
-    <div class="chat-box">
-      <div class="message opponent">
-        <strong>Claudinho</strong>
-        <p>A galinha</p>
+<body>
+  <div class="duel-container">
+    <header>
+      <div class="player-info">
+        <div class="avatar">
+          <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="Você">
+        </div>
+        <span class="player-name">Você</span>
       </div>
-      <div class="message user">
-        <strong>Você</strong>
-        <p>O ovo</p>
-      </div>
-    </div>
-    <div class="question-box">
-      <h3>Quem nasceu primeiro<br />o Ovo ou a Galinha?</h3>
-      <input type="text" placeholder="Digite sua resposta..." class="input-resposta" />
+      <a href="index.html" class="quit-button">🛑 Desistir do Duelo</a>
+    </header>
+    
 
-    </div>
-  </main>
-  <footer>
-    <p>7 pontos de vida restante</p>
-  </footer>
+    <main>
+      <div class="chat-section">
+        <div class="chat-bubble left">
+          <div class="avatar">
+            <img src="./src/assets/img/Imagens para perfis/CR7.jpg" alt="">
+          </div>
+          <div class="bubble-content">
+            <span class="name">Natalie</span>
+            <p>A galinha</p>
+          </div>
+        </div>
+
+        <div class="chat-bubble right">
+          <div class="avatar">
+            <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="">
+          </div>
+          <div class="bubble-content">
+            <span class="name">Você</span>
+            <p>O ovo</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h3>⚔️ Desafio!</h3>
+        <p>Quem nasceu primeiro: o ovo ou a galinha?</p>
+        <div class="input-group">
+          <input type="text" placeholder="Digite sua resposta..." />
+          <button>Enviar</button>
+        </div>
+      </div>
+      
+    </main>
+
+    <footer>
+      <div class="life-bar">
+        <div class="life-segment full"></div>
+        <div class="life-segment full"></div>
+        <div class="life-segment full"></div>
+        <div class="life-segment full"></div>
+        <div class="life-segment full"></div>
+        <div class="life-segment full"></div>
+        <div class="life-segment full"></div>
+        <div class="life-segment empty"></div>
+        <div class="life-segment empty"></div>
+        <div class="life-segment empty"></div>
+      </div>
+      <span class="life-text">7 pontos de vida restantes</span>
+    </footer>
+  </div>
+
 </body>
 </html>
