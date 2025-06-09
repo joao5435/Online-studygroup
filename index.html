@@ -7,75 +7,86 @@
   <link rel="stylesheet" href="./src/assets/style/home.css" />
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <a href="Seção_1.html">
-      <div class="menu-icon">
-        <img src="./src/assets/img/icon das tres setas.png" alt="Três Listras">
-      </div>
+    <a href="Seção_1.html" class="menu-icon" aria-label="Menu">
+      <img src="./src/assets/img/icon menu.png" alt="Ícone de Menu" />
     </a>
-    
-    <div class="logo">Online study group</div>
+
+    <div class="logo">Online Study Group</div>
+
     <div class="search-container">
-      <input type="text" placeholder="Pesquisar" />
-      <div class="search-icon">🔍</div>
+      <input class="search-input" type="text" placeholder="Pesquisar" aria-label="Pesquisar" />
+      <button class="search-button" aria-label="Buscar">🔍</button>
     </div>
-    <div class="user-icon">
-      <a href="Perfil.html">
-        <img src="./src/assets/img/icon de usuario.png" alt="Perfil do Usuário" style="width: 24px; height: 24px;">
-      </a>
-    </div>
+
+    <a href="Perfil.html" class="user-icon" aria-label="Perfil do Usuário">
+      <img src="./src/assets/img/icon de usuario.png" alt="Ícone de Usuário" width="24" height="24" />
+    </a>
   </header>
 
+  <!-- BANNER -->
   <section class="banner">
-    <button class="carousel-btn left">❮</button>
-    <div class="./src/assets/img/carrossel pc.png">
-      <h1>BOAS VINDAS Á<br><span>OSG</span></h1>
+    <button class="carousel-btn left" aria-label="Anterior">❮</button>
+
+    <div class="banner-content">
+      <h1>BOAS VINDAS À<br><span>OSG</span></h1>
       <p class="sub">Online Study Group</p>
-      <p class="desc">Sua Comunidade de Estudos a distância</p>
+      <p class="desc">Sua Comunidade de Estudos a Distância</p>
       <div class="icon">👥</div>
     </div>
-    <button class="carousel-btn right">❯</button>
+
+    <button class="carousel-btn right" aria-label="Próximo">❯</button>
   </section>
 
+  <!-- GRUPOS -->
   <section class="grupos">
     <h2>Seus Grupos</h2>
     <ul>
       <li>
-        <a href="GrupoQuimica.html">
-          <span>🧪</span> Grupo de Química
-        </a>
+        <a href="GrupoQuimica.html"><span>🧪</span> Grupo de Química</a>
       </li>
-      
       <li><span>🗣️</span> Grupo de Português</li>
       <li><span>📐</span> Grupo de Matemática</li>
       <li><span>🌍</span> Grupo de Geografia</li>
     </ul>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-section">
       <h4>Ajuda</h4>
       <p>Central de ajuda</p>
       <p>Central de segurança</p>
-      <p>Seja Voluntário</p>
+      <p>Seja voluntário</p>
     </div>
+
     <div class="footer-section">
-      <li><a href="SobreNos.html">Sobre Nós</a></li>
-      <p>Diretrizes da Comunidade</p>
-      <p>Política de Direitos Autorais</p>
-      <p>Código de conduta</p>
+      <h4>Sobre</h4>
+      <ul>
+        <li><a href="SobreNos.html">Sobre Nós</a></li>
+        <li><a href="#">Diretrizes da Comunidade</a></li>
+        <li><a href="#">Política de Direitos Autorais</a></li>
+        <li><a href="#">Código de Conduta</a></li>
+      </ul>
     </div>
+
     <div class="footer-section">
       <h4>Empresa</h4>
-      <li><a href="Blog.html">Blog</a></li>
-      <p>Trabalhe conosco</p>
-      <p>Anuncie conosco</p>
+      <ul>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="#">Trabalhe Conosco</a></li>
+        <li><a href="#">Anuncie Conosco</a></li>
+      </ul>
     </div>
+
     <div class="footer-section app-links">
-      <p>Nos Encontre em:</p>
+      <p>Nos encontre em:</p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" />
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" />
     </div>
   </footer>
+
 </body>
 </html>

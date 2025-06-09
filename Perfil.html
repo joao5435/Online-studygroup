@@ -1,66 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="./src/assets/style/Perfil.css">
+  <meta charset="UTF-8" />
+  <title>Perfil</title>
+  <link rel="stylesheet" href="./src/assets/style/Perfil.css" />
 </head>
 <body>
-    <div class="perfil-container">
-        <button class="voltar"><a href="index.html">←</a></button>
+  <main class="perfil-container">
+    <a href="index.html" class="voltar" aria-label="Voltar para página inicial">←</a>
 
-        <img src="./src/assets/img/Matuim.png" alt="Foto de perfil" class="foto-perfil">
+    <img src="./src/assets/img/Matuim.png" alt="Foto de perfil de Matuim G. Roxo" class="foto-perfil" />
 
-        <h2>Matuim G. Roxo</h2>
+    <h2>Matuim G. Roxo</h2>
 
-        <div class="estatisticas">
-            <div><span>33</span><br>Dias ativo</div>
-            <div><span>333</span><br>Duelos vencidos</div>
-            <div><img src="./src/assets/img/Patente.png" class="icone-patente"><br>Patente</div>
-        </div>
-
-        <div class="acoes">
-            <div><img src="./src/assets/img/Icon de edição.png"> Editar Perfil</div>
-            
-            
-            
-            
-            
-            <a href="ConviteDuelo.html" style="text-decoration: none; color: inherit;">
-              <div>
-                <img src="./src/assets/img/icon para duelar.png" alt="chamar para Duelo">
-                Duelar com Amigos
-              </div>
-            </a>
-           
-           
-           
-           
-           
-           
-            <a href="Mensagem.html" style="text-decoration: none; color: inherit;">
-                <div>
-                  <img src="./src/assets/img/icon de conversa.png" alt="Ícone de conversa">
-                  Mensagem
-                </div>
-              </a>
-
-
-
-              
-            <div><img src="./src/assets/img/icon de Pontuação.png"> Pontuação</div>
-
-
-
-
-            
-            
-            <a href="TeladoQuerer.html" style="text-decoration: none; color: inherit;">
-                <div>
-                  <img src="./src/assets/img/icon de logout.png" alt="Ícone para Logout">
-                  Logout
-                </div>
-              </a>
+    <section class="estatisticas" aria-label="Estatísticas do usuário">
+      <div>
+        <span>33</span><br />
+        Dias ativo
       </div>
+      <div>
+        <span>333</span><br />
+        Duelos vencidos
+      </div>
+      <div>
+        <img src="./src/assets/img/Patente.png" alt="Ícone de patente" class="icone-patente" /><br />
+        Patente
+      </div>
+    </section>
+
+    <nav class="acoes" aria-label="Ações do perfil">
+      <button type="button" class="acao-item">
+        <img src="./src/assets/img/Icon de edição.png" alt="" aria-hidden="true" />
+        Editar Perfil
+      </button>
+
+      <a href="ConviteDuelo.html" class="acao-item">
+        <img src="./src/assets/img/icon para duelar.png" alt="" aria-hidden="true" />
+        Duelar com Amigos
+      </a>
+
+      <a href="Mensagem.html" class="acao-item">
+        <img src="./src/assets/img/icon de conversa.png" alt="" aria-hidden="true" />
+        Mensagem
+      </a>
+
+      <button type="button" class="acao-item">
+        <img src="./src/assets/img/icon de Pontuação.png" alt="" aria-hidden="true" />
+        Pontuação
+      </button>
+
+      <a href="TeladoQuerer.html" class="acao-item">
+        <img src="./src/assets/img/icon de logout.png" alt="" aria-hidden="true" />
+        Logout
+      </a>
+    </nav>
+  </main>
 </body>
 </html>

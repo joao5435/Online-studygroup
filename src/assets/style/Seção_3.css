@@ -1,14 +1,14 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #2b0a3d;
-    color: white;
-  }
+body {
+  background-color: #2b0a3d;
+  color: white;
+}
   
   /* Top Bar */
   .top-bar {
@@ -55,9 +55,9 @@
   }
   
   .nav-btn {
+    font-size: 24px;
     background: none;
     border: none;
-    font-size: 24px;
     color: white;
     cursor: pointer;
   }
