@@ -1,0 +1,69 @@
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      color: #cf38f8;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px #7306a5;
+    }
+    .xp-total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #b30cb3;
+    }
+    .resultado {
+      background: #1e293b;
+      border-radius: 1rem;
+      padding: 1rem 2rem;
+      margin-bottom: 1rem;
+      border: 2px solid transparent;
+    }
+    .resultado.acertou {
+      border-color: #22c55e; /* verde */
+      background-color: #14532d88;
+    }
+    .resultado.errou {
+      border-color: #ef4444; /* vermelho */
+      background-color: #7f1d1d88;
+    }
+    .pergunta {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .resposta-usuario {
+      margin-bottom: 0.2rem;
+    }
+    .resposta-correta {
+      font-style: italic;
+      color: #a5f3fc;
+    }
+    .btn-voltar {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      background-color: #ad169e;
+      border: none;
+      border-radius: 2rem;
+      color: #5c0a79;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      width: max-content;
+      box-shadow: 0 0 15px #0ea5e9;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-voltar:hover {
+      background-color: #660980;
+    }
+ 

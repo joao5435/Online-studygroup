@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  color: #e2e8f0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background: rgba(136, 20, 212, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Título */
+.titulo {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ca14bb;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px #5e0e6e;
+}
+
+/* XP */
+.xp {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #b521b5;
+  font-weight: bold;
+}
+
+/* Cada pergunta */
+.pergunta {
+  background-color: #280439;
+  border: 1px solid #380d62;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.texto-pergunta {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+/* Botões de opção */
+.opcao {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #e2e8f0;
+  background-color: #5b2055;
+  border: 1px solid #5b00ab;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.opcao:hover {
+  background-color: #480761;
+  color: #ffffff;
+  box-shadow: 0 0 8px #4a0f62;
+}
+
+/* Botão de opção selecionado */
+.opcao.selecionado {
+  background-color: #ed17d4;
+  border-color: #e01cdd;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 0 10px #7a009c;
+}
+
+/* Botão de finalizar */
+.botao-finalizar {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background-color: #d648e3;
+  border: none;
+  border-radius: 2rem;
+  color: #5e0a97;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botao-finalizar:hover {
+  background-color: #8524b3;
+  box-shadow: 0 0 15px #411156;
+}
+
+.botao-finalizar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz de XP</title>
+  <link rel="stylesheet" href="./src/assets/style/QuizXP.css" />
+  <script>
+    const perguntas = [
+      {
+        pergunta: "Qual é o próximo número da sequência: 2, 4, 8, 16, ?",
+        opcoes: ["18", "24", "32", "20"],
+        resposta: "32"
+      },
+      {
+        pergunta: "Quem escreveu 'Dom Casmurro'?",
+        opcoes: ["Machado de Assis", "José de Alencar", "Carlos Drummond", "Clarice Lispector"],
+        resposta: "Machado de Assis"
+      },
+      {
+        pergunta: "Qual o valor de x na equação 3x + 5 = 20?",
+        opcoes: ["3", "5", "6", "7"],
+        resposta: "5"
+      },
+      {
+        pergunta: "Em que continente fica o Egito?",
+        opcoes: ["Ásia", "Europa", "África", "América"],
+        resposta: "África"
+      },
+      {
+        pergunta: "Qual é o resultado de 5! (fatorial de 5)?",
+        opcoes: ["60", "100", "120", "20"],
+        resposta: "120"
+      },
+      {
+        pergunta: "De quem é a famosa frase “Penso, logo existo ?",
+        opcoes: ["Platão", "Galileu Galilei", "Descartes", "Sócrates"],
+        resposta: "Descartes"
+      },
+      {
+        pergunta: "De onde é a invenção do chuveiro elétrico?",
+        opcoes: ["França", "Inglaterra", "Brasil", "Austrália"],
+        resposta: "Brasil"
+      },
+      {
+        pergunta: "Quais o menor e o maior país do mundo?",
+        opcoes: ["Vaticano e Rússia", "Nauru e China", "Mônaco e Canadá", "Malta e Estados Unidos"],
+        resposta: "Vaticano e Rússia"
+      },
+      {
+        pergunta: "Quantas casas decimais tem o número pi?",
+        opcoes: ["Duas", "Centenas", "Infinitas", "Vinte"],
+        resposta: "Infinitas"
+      },
+      {
+        pergunta: "Atualmente, quantos elementos químicos a tabela periódica possui?",
+        opcoes: ["113", "109", "108", "118"],
+        resposta: "118"
+      }
+    ];
+
+    let respostas = Array(perguntas.length).fill(null);
+
+    function renderPerguntas() {
+      const container = document.getElementById("quiz");
+      container.innerHTML = "";
+      perguntas.forEach((q, i) => {
+        const div = document.createElement("div");
+        div.className = "pergunta";
+
+        const opcoesHTML = q.opcoes.map(opcao => {
+          const selecionado = respostas[i] === opcao ? "selecionado" : "";
+          return `
+            <button class="opcao ${selecionado}" onclick="selecionarResposta(${i}, '${opcao}')">
+              ${opcao}
+            </button>
+          `;
+        }).join("");
+
+        div.innerHTML = `
+          <p class="texto-pergunta">${q.pergunta}</p>
+          ${opcoesHTML}
+        `;
+        container.appendChild(div);
+      });
+      atualizarBotaoFinalizar();
+    }
+
+    function selecionarResposta(indicePergunta, respostaEscolhida) {
+      respostas[indicePergunta] = respostaEscolhida;
+      renderPerguntas();
+    }
+
+    function atualizarBotaoFinalizar() {
+      const botao = document.getElementById("btnFinalizar");
+      // Habilita o botão somente se todas as perguntas foram respondidas
+      botao.disabled = respostas.includes(null);
+    }
+
+    function finalizarQuiz() {
+      let xp = 0;
+      let respostasDetalhadas = [];
+
+      respostas.forEach((resposta, i) => {
+        const acertou = resposta === perguntas[i].resposta;
+        if (acertou) xp += 10;
+        respostasDetalhadas.push({
+          pergunta: perguntas[i].pergunta,
+          respostaUsuario: resposta,
+          respostaCorreta: perguntas[i].resposta,
+          acertou: acertou
+        });
+      });
+
+      localStorage.setItem("resultadoXP", xp);
+      localStorage.setItem("resultadoDetalhes", JSON.stringify(respostasDetalhadas));
+
+      window.location.href = "resultado.html";
+    }
+
+    window.onload = () => {
+      renderPerguntas();
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Desafio de Conhecimento</h1>
+    <div id="quiz"></div>
+    <button id="btnFinalizar" class="botao-finalizar" onclick="finalizarQuiz()" disabled>Finalizar Quiz</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resultado do Quiz</title>
+  <link rel="stylesheet" href="./src/assets/style/ResultadoXP.css" />
+  
+</head>
+<body>
+  <h1>Resultado do Quiz</h1>
+  <div class="xp-total" id="xpTotal"></div>
+  <div id="resultados"></div>
+  <a href="Pagina_do_Quiz.html" class="btn-voltar">Refazer Quiz</a>
+  <a href="index.html" class="btn-voltar">Voltar para Home</a>
+
+  <script>
+    const xp = localStorage.getItem("resultadoXP") || 0;
+    const detalhes = JSON.parse(localStorage.getItem("resultadoDetalhes")) || [];
+
+    document.getElementById("xpTotal").innerText = `Você fez ${xp} XP de ${detalhes.length * 10} possíveis!`;
+
+    const container = document.getElementById("resultados");
+    detalhes.forEach(item => {
+      const div = document.createElement("div");
+      div.classList.add("resultado");
+      div.classList.add(item.acertou ? "acertou" : "errou");
+
+      div.innerHTML = `
+        <div class="pergunta">${item.pergunta}</div>
+        <div class="resposta-usuario"><strong>Sua resposta:</strong> ${item.respostaUsuario ?? "<em>Não respondeu</em>"}</div>
+        ${item.acertou ? "" : `<div class="resposta-correta"><strong>Resposta correta:</strong> ${item.respostaCorreta}</div>`}
+      `;
+
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

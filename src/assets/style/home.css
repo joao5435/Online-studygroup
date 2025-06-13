@@ -277,3 +277,40 @@ footer {
     text-align: center;
   }
 }
+
+
+.perguntas {
+  padding: 10px 20px;
+}
+
+.perguntas h2 {
+  text-align: center;
+  margin: 10px 0;
+  color: var(--highlight);
+}
+
+.perguntas ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.perguntas li {
+  background-color: var(--group-bg);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+
+.perguntas a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.perguntas a:hover {
+  text-decoration: underline;
+}
