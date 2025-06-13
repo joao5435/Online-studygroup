@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="./src/assets/style/EditarPerfil.css"/>
+</head>
+<body>
+  <main class="perfil-container">
+    <header class="perfil-cabecalho">
+      <a href="Perfil.html" class="voltar" aria-label="Voltar para o perfil">←</a>
+      <div class="avatar-wrapper">
+        <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="Avatar de Matuim G. Roxo" class="avatar">
+      </div>
+      <h2>Editar Perfil</h2>
+    </header>
+
+    <form class="formulario-perfil" id="formPerfil">
+      <section>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required>
+
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade" min="1" required>
+
+        <label for="localizacao">Localização</label>
+        <input type="text" id="localizacao" name="localizacao" placeholder="Cidade, Estado">
+
+        <label for="nacionalidade">Nacionalidade</label>
+        <input type="text" id="nacionalidade" name="nacionalidade">
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(00) 0000-0000">
+        
+        <label for="avatar">Alterar Avatar</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*">
+      </section>
+
+      <section class="estatisticas">
+        <div><strong>33</strong><span>Dias ativo</span></div>
+        <div><strong>333</strong><span>Duelos vencidos</span></div>
+        <div>
+          <img src="./src/assets/img/Patente.png" alt="Ícone da patente" class="icone-patente">
+          <span>Patente</span>
+        </div>
+      </section>
+
+      <button type="submit" class="botao-salvar">Salvar Alterações</button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById('formPerfil');
+    const campos = ['nome', 'email', 'idade', 'localizacao', 'nacionalidade', 'telefone'];
+
+    function carregarDadosSalvos() {
+      campos.forEach(campo => {
+        const valorSalvo = localStorage.getItem(campo);
+        if (valorSalvo) {
+          document.getElementById(campo).value = valorSalvo;
+        }
+      });
+    }
+
+    function salvarDados(e) {
+      e.preventDefault();
+      campos.forEach(campo => {
+        const valor = document.getElementById(campo).value;
+        localStorage.setItem(campo, valor);
+      });
+      alert('Dados salvos com sucesso!');
+      window.location.href = "Perfil.html";
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarDadosSalvos);
+    form.addEventListener('submit', salvarDados);
+  </script>
+</body>
+</html>

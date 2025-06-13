@@ -1,0 +1,159 @@
+/* === RESET E BASE === */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #220033;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  
+  /* === CONTAINER PRINCIPAL === */
+  .perfil-container {
+    background-color: #3a0066;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  /* === CABEÇALHO === */
+  .perfil-cabecalho {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .voltar {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+  
+  .voltar:hover,
+  .voltar:focus {
+    color: #c300ff;
+    outline: none;
+  }
+  
+  /* === AVATAR === */
+  .avatar-wrapper {
+    margin-bottom: 10px;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d708eee0;
+  }
+  
+  /* === TÍTULO === */
+  h2 {
+    margin: 10px 0;
+    font-size: 24px;
+  }
+  
+  /* === FORMULÁRIO === */
+  .formulario-perfil label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .formulario-perfil input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4d007d;
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .formulario-perfil input:focus {
+    background-color: #5d0094;
+    box-shadow: 0 0 0 3px rgba(0, 208, 255, 0.4);
+    outline: none;
+  }
+  
+  .formulario-perfil input::placeholder {
+    color: #bbb;
+  }
+  
+  /* === ESTATÍSTICAS === */
+  .estatisticas {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .estatisticas div {
+    flex: 1;
+  }
+  
+  .estatisticas strong {
+    display: block;
+    font-size: 20px;
+  }
+  
+  .icone-patente {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+  }
+  
+  /* === BOTÃO SALVAR === */
+  .botao-salvar {
+    width: 100%;
+    padding: 12px;
+    background-color: #660bbb;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .botao-salvar:hover {
+    background-color: #d508d8;
+  }
+  
+  .botao-salvar:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(140, 9, 247, 0.5);
+    transform: scale(1.02);
+  }
+  
+  /* === RESPONSIVIDADE BÁSICA === */
+  @media (max-width: 480px) {
+    .perfil-container {
+      padding: 20px;
+    }
+  
+    .avatar {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .voltar {
+      font-size: 20px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  }
+  
