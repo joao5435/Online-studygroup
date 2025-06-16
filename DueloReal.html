@@ -1,56 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Duelo de Saberes</title>
-  <link rel="stylesheet" href="./src/assets/style/DueloReal.css">
+  <link rel="stylesheet" href="./src/assets/style/DueloReal.css" />
+  <style>
+    /* Estilo básico para feedback neutro (sem avatar) */
+    .chat-bubble.system {
+      background-color: #e0e0e0;
+      color: #333;
+      max-width: 60%;
+      margin: 10px auto;
+      padding: 10px 15px;
+      border-radius: 15px;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="duel-container">
     <header>
       <div class="player-info">
         <div class="avatar">
-          <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="Você">
+          <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="Você" />
         </div>
         <span class="player-name">Você</span>
       </div>
       <a href="index.html" class="quit-button">🛑 Desistir do Duelo</a>
     </header>
-    
 
     <main>
       <div class="chat-section">
-        <div class="chat-bubble left">
-          <div class="avatar">
-            <img src="./src/assets/img/Imagens para perfis/CR7.jpg" alt="">
-          </div>
-          <div class="bubble-content">
-            <span class="name">Natalie</span>
-            <p>A galinha</p>
-          </div>
-        </div>
-
-        <div class="chat-bubble right">
-          <div class="avatar">
-            <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="">
-          </div>
-          <div class="bubble-content">
-            <span class="name">Você</span>
-            <p>O ovo</p>
-          </div>
-        </div>
+        <!-- Começa vazio -->
       </div>
 
       <div class="question-card">
         <h3>⚔️ Desafio!</h3>
         <p>Quem nasceu primeiro: o ovo ou a galinha?</p>
         <div class="input-group">
-          <input type="text" placeholder="Digite sua resposta..." />
+          <input type="text" placeholder="Digite sua resposta..." autocomplete="off" />
           <button>Enviar</button>
         </div>
       </div>
-      
     </main>
 
     <footer>
@@ -70,5 +63,117 @@
     </footer>
   </div>
 
+  <script>
+    const perguntas = [
+      "Quem nasceu primeiro: o ovo ou a galinha?",
+      "Qual é a capital do Brasil?",
+      "Qual o maior planeta do sistema solar?",
+      "Quem escreveu 'Dom Casmurro'?",
+      "Qual é o elemento químico representado por H?"
+    ];
+
+    const respostasCorretas = [
+      "o ovo",
+      "brasília",
+      "júpiter",
+      "machado de assis",
+      "hidrogênio"
+    ];
+
+    let indiceAtual = 0;
+    let vida = 7; // vida inicial (7 pontos conforme sua barra)
+
+    const perguntaElemento = document.querySelector(".question-card p");
+    const input = document.querySelector(".input-group input");
+    const botao = document.querySelector(".input-group button");
+    const chatSection = document.querySelector(".chat-section");
+    const lifeBar = document.querySelector(".life-bar");
+    const lifeText = document.querySelector(".life-text");
+
+    function normalizar(texto) {
+      return texto.toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .trim();
+    }
+
+    function mostrarPergunta() {
+      if (indiceAtual < perguntas.length && vida > 0) {
+        perguntaElemento.textContent = perguntas[indiceAtual];
+      } else {
+        perguntaElemento.textContent = "Fim do duelo! 🎉";
+        input.disabled = true;
+        botao.disabled = true;
+      }
+    }
+
+    function atualizarVida() {
+      // Cada ponto de vida = um segmento cheio na barra
+      const segmentos = lifeBar.querySelectorAll(".life-segment");
+      // Atualiza os segmentos: primeiro full vira empty conforme vida
+      segmentos.forEach((segmento, i) => {
+        segmento.className = i < vida ? "life-segment full" : "life-segment empty";
+      });
+
+      lifeText.textContent = `${vida} ponto${vida !== 1 ? "s" : ""} de vida restante${vida !== 1 ? "s" : ""}`;
+    }
+
+    botao.addEventListener("click", () => {
+      const respostaUsuarioRaw = input.value.trim();
+      const respostaUsuario = normalizar(respostaUsuarioRaw);
+
+      if (respostaUsuario !== "" && vida > 0 && indiceAtual < perguntas.length) {
+        // Balão resposta do usuário
+        const bubbleUsuario = document.createElement("div");
+        bubbleUsuario.className = "chat-bubble right";
+        bubbleUsuario.innerHTML = `
+          <div class="avatar">
+            <img src="./src/assets/img/Imagens para perfis/Matuim.png" alt="Você" />
+          </div>
+          <div class="bubble-content">
+            <span class="name">Você</span>
+            <p>${respostaUsuarioRaw}</p>
+          </div>
+        `;
+        chatSection.appendChild(bubbleUsuario);
+
+        // Verifica resposta correta
+        let feedback = "";
+        if (respostaUsuario === normalizar(respostasCorretas[indiceAtual])) {
+          feedback = "✔️ Acertou!";
+        } else {
+          feedback = `❌ Errou! A resposta correta é: ${respostasCorretas[indiceAtual]}`;
+          vida = Math.max(0, vida - 1);
+          atualizarVida();
+        }
+
+        // Balão de feedback neutro (sem avatar)
+        const bubbleFeedback = document.createElement("div");
+        bubbleFeedback.className = "chat-bubble system";
+        bubbleFeedback.textContent = feedback;
+        chatSection.appendChild(bubbleFeedback);
+
+        input.value = "";
+        indiceAtual++;
+
+        mostrarPergunta();
+
+        chatSection.scrollTop = chatSection.scrollHeight;
+
+        // Se vida zerou, avisa fim do duelo
+        if (vida === 0) {
+          const fimMsg = document.createElement("div");
+          fimMsg.className = "chat-bubble system";
+          fimMsg.textContent = "😞 Você perdeu todas as vidas! Fim do duelo.";
+          chatSection.appendChild(fimMsg);
+          input.disabled = true;
+          botao.disabled = true;
+          perguntaElemento.textContent = "Duelo encerrado!";
+        }
+      }
+    });
+
+    mostrarPergunta();
+    atualizarVida();
+  </script>
 </body>
 </html>
